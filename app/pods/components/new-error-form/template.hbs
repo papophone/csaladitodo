@@ -1,0 +1,30 @@
+<form class="form-horizontal" method="post" data-toggle="validator">
+    <fieldset>
+        <div class="form-group {{if errors.location "has-error"}}">
+            <label for="helyszin" class="col-lg-2 control-label">Megnevezés</label>
+            <div class="col-lg-10">
+                <select class="form-control" id="helyszin" name="helyszin" required>
+                    <option value="Takarítás" selected>Takarítás</option>
+                    <option value="Mosás">Mosás</option>
+                    <option value="Főzés">Főzés</option>
+                    <option value="Kutyasétáltatás">Kutyasétáltatás</option>
+                </select>
+                <div class="help-block with-errors">{{errors.location}}</div>
+            </div>
+        </div>
+        <div class="form-group {{if errors.description "has-error"}}">
+            <label for="leiras" class="col-lg-2 control-label">Név és időpont</label>
+            <div class="col-lg-10">
+                <textarea required class="form-control" rows="3" id="leiras" name="leiras">{{data.leiras}}</textarea>
+                <span class="help-block">Add meg a neved és a dátumot!</span>
+                <div class="help-block with-errors">{{errors.description}}</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button type="reset" class="btn btn-default">Cancel</button>
+                <button {{action "submit"}} class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </fieldset>
+</form>        
