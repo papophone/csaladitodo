@@ -1,53 +1,70 @@
-# Gyak09
+#Alkalmazások fejlesztése harmadik beadandó
+##2016.01.10
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+###A feladat leírása
 
-## Prerequisites
+Egy webes vastagkliens, azaz egyoldalas alkalmazás készítése Ember.js segítségével az utolsó beadandó. Feladatot illetően lehet a szerveroldali alkalmazásnak egy kliensoldali változata, de másik feladat is választható. A feladatnak mininálisan tartalmaznia kell:
 
-You will need the following things properly installed on your computer.
+legalább két modellt, egy-sok kapcsolatban
+legalább 1 űrlapot
+legalább 1 listázó oldalt
+legyen lehetőség új felvételére
+legyen lehetőség meglévő szerkesztésére
+legyen lehetőség meglévő törlésére
+REST API végpont kialakítása
+szerveroldali perzisztálás fájlba
+A formai követelményeknek megfelelően kell elkészíteni, dokumentálni és közzétenni. Az órai gyakorlatnak megfelelően ez új workspace-ek létrehozását jelenti Cloud9 oldalon, és a Github-on is külön kódtárba dolgozzunk. A dokumentációval kapcsolatos elvárások a formai követelményeknél írtaknak megfelelő (minden kell). A Heroku-n való közzététel opcionális.
 
-* [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM)
-* [Bower](http://bower.io/)
-* [Ember CLI](http://www.ember-cli.com/)
-* [PhantomJS](http://phantomjs.org/)
+A feladatötletek közül a családi todo-t választottam.
 
-## Installation
+###Futattás
 
-* `git clone <repository-url>` this repository
-* change into the new directory
-* `npm install`
-* `bower install`
+Githubról le kell tölteni a projektet, majd a cloud9 ide segítsévégel elindítani (támogatja a rest-api-t és az ember.js-t).
+Kettő workspacet létrehozunk egyet a szervernek egyet pedig a projectnek, elindítjuk a server.js-t, majd a projecten belül ./node_modules/.bin/ember serve paranccsal szolgáljuk ki.
+A projectből a dist mappát kitéve el tudjuk indítani a projectet bármely szerverről.
 
-## Running / Development
+###Végpontok
 
-* `ember server`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+Főoldal: http://csaladi-todo-papophone.c9users.io
+Feladatok: http://csaladi-todo-papophone.c9users.io/errors/list
+Új feladat felvétele: http://csaladi-todo-papophone.c9users.io/errors/new
+Megtekint: http://csaladi-todo-papophone.c9users.io/errors/
 
-### Code Generators
+###Adatmodell
 
-Make use of the many generators for code, try `ember help generate` for more details
+TODO: Hozzáadás dátuma, Megnevezés, Időpont
 
-### Running Tests
+###Használati útmutató
 
-* `ember test`
-* `ember test --server`
+A feladatok menüpont alatt érhetjük a meglévő feladatainkat, illetve vehetünk fel újakat. A megtekint gombbal tekinthetjük meg az adott feladatot, és a töröl gombbal törölhetjük is azt.
 
-### Building
+Új feladat felvétele: A megnevezést egy legördülő menü segítségével választhatjuk ki. A nevet és az időpontot is meg kell adnunk.
+Megtekint: Az adott feladatról egy részletes leírást kapunk.
+Töröl: A töröl gombbal tudjuk törölni a feladatot.
 
-* `ember build` (development)
-* `ember build --environment production` (production)
+###Szerepkörök
 
-### Deploying
+Egyetlen szerepkör van, mégpedig a látogató ő hozzá fér mindenhez.
 
-Specify what it takes to deploy your app.
+###Mappaszerkezet
 
-## Further Reading / Useful Links
+* README.md
+* app/
+* bower.json
+* bower_components/
+* config/
+* dist/
+* ember-cli-build.js
+* node_modules/
+* package.json
+* public/
+* testem.json
+* tests/
+* tmp/
+* vendor/
 
-* [ember.js](http://emberjs.com/)
-* [ember-cli](http://www.ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+
+
+
+
 
